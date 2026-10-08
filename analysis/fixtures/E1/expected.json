@@ -1,0 +1,144 @@
+{
+ "asr_cost_full_minus_console": {
+  "cpu": 11.875,
+  "gpu": 10,
+  "power_mw": 1000,
+  "ram_mb": 550
+ },
+ "config": "A",
+ "input_problems": {},
+ "run": "E1-fixture",
+ "segments": {
+  "console": {
+   "core_saturation_frac": 0.0,
+   "cpu": {
+    "max": 40,
+    "mean": 40,
+    "median": 40.0,
+    "min": 40,
+    "n": 40,
+    "p95": 40.0,
+    "sd": 0.0
+   },
+   "free_available_mb": {
+    "min": 4805.0,
+    "n": 8
+   },
+   "gpu": {
+    "max": 10,
+    "mean": 10,
+    "median": 10.0,
+    "min": 10,
+    "n": 40,
+    "p95": 10.0,
+    "sd": 0.0
+   },
+   "n_samples": 40,
+   "nodes": {
+    "face": {
+     "cpu_pct_mean": 20.0,
+     "n": 1,
+     "rss_mb_mean": 100.0
+    },
+    "gateway": {
+     "cpu_pct_mean": 10.0,
+     "n": 1,
+     "rss_mb_mean": 50.0
+    }
+   },
+   "power_mw_mean": 7000,
+   "ram_mb": {
+    "max": 2500,
+    "mean": 2500,
+    "median": 2500.0,
+    "min": 2500,
+    "n": 40,
+    "p95": 2500.0,
+    "sd": 0.0
+   },
+   "rates": {
+    "/state/perception/face": {
+     "cv": null,
+     "mean_hz": 20.0,
+     "min_ge_half_mean": true,
+     "min_window_hz": 20.0,
+     "n_windows": 1
+    }
+   },
+   "t0": 1791370900.0,
+   "t1": 1791371000.0,
+   "tj_max": 52.0
+  },
+  "full": {
+   "core_saturation_frac": 0.25,
+   "cpu": {
+    "max": 57.5,
+    "mean": 51.875,
+    "median": 50.0,
+    "min": 50,
+    "n": 40,
+    "p95": 57.5,
+    "sd": 3.289
+   },
+   "free_available_mb": {
+    "min": 4905.0,
+    "n": 8
+   },
+   "gpu": {
+    "max": 20,
+    "mean": 20,
+    "median": 20.0,
+    "min": 20,
+    "n": 40,
+    "p95": 20.0,
+    "sd": 0.0
+   },
+   "n_samples": 40,
+   "nodes": {
+    "face": {
+     "cpu_pct_mean": 40.0,
+     "n": 2,
+     "rss_mb_mean": 100.0
+    },
+    "gateway": {
+     "cpu_pct_mean": 10.0,
+     "n": 2,
+     "rss_mb_mean": 50.0
+    }
+   },
+   "power_mw_mean": 8000,
+   "ram_mb": {
+    "max": 3100,
+    "mean": 3050,
+    "median": 3050.0,
+    "min": 3000,
+    "n": 40,
+    "p95": 3100.0,
+    "sd": 50.637
+   },
+   "rates": {
+    "/state/perception/face": {
+     "cv": 0.074,
+     "mean_hz": 19.0,
+     "min_ge_half_mean": true,
+     "min_window_hz": 18.0,
+     "n_windows": 2
+    }
+   },
+   "t0": 1791370800.0,
+   "t1": 1791370900.0,
+   "tj_max": 55.5
+  }
+ },
+ "stability": {
+  "dead_panes": [],
+  "no_new_oom": true,
+  "panes_alive": true,
+  "rates_min_ge_half_mean": true,
+  "stable": true,
+  "tj_below_85": true
+ },
+ "valid": true,
+ "waived": [],
+ "warmup_s": 60
+}

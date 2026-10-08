@@ -1,0 +1,12 @@
+{
+ "run": "E1-B-r1",
+ "label": "lidar",
+ "config": "B",
+ "kill": [],
+ "clock_offset_s": 0.002579927444458008,
+ "clock_rtt_s": 0.00955510139465332,
+ "t_start": 1791372243.6431437,
+ "t_end": 1791372914.2125177,
+ "harness_sha": "2bc4570bb8cbd4677b2533c8c84a9ba5b3730c36",
+ "faults_active": []
+}

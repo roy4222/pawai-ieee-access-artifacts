@@ -1,0 +1,164 @@
+{
+ "asr_cost_full_minus_console": null,
+ "config": "A",
+ "input_problems": {},
+ "run": "E1-person",
+ "segments": {
+  "A-console-person": {
+   "core_saturation_frac": 0.931,
+   "cpu": {
+    "max": 97,
+    "mean": 91.123,
+    "median": 92.167,
+    "min": 80.167,
+    "n": 247,
+    "p95": 94.9,
+    "sd": 3.438
+   },
+   "free_available_mb": {
+    "min": 3298.0,
+    "n": 49
+   },
+   "gpu": {
+    "max": 75,
+    "mean": 19.785,
+    "median": 0,
+    "min": 0,
+    "n": 247,
+    "p95": 75.0,
+    "sd": 26.455
+   },
+   "n_samples": 247,
+   "nodes": {
+    "brain": {
+     "cpu_pct_mean": 4.5,
+     "n": 49,
+     "rss_mb_mean": 51.245
+    },
+    "camera": {
+     "cpu_pct_mean": 18.1,
+     "n": 49,
+     "rss_mb_mean": 106.889
+    },
+    "depth_safety": {
+     "cpu_pct_mean": 6.5,
+     "n": 49,
+     "rss_mb_mean": 67.438
+    },
+    "executive": {
+     "cpu_pct_mean": 3.3,
+     "n": 49,
+     "rss_mb_mean": 65.138
+    },
+    "face": {
+     "cpu_pct_mean": 199.245,
+     "n": 49,
+     "rss_mb_mean": 254.865
+    },
+    "fox": {
+     "cpu_pct_mean": 1.7,
+     "n": 49,
+     "rss_mb_mean": 48.61
+    },
+    "gateway": {
+     "cpu_pct_mean": 16.4,
+     "n": 49,
+     "rss_mb_mean": 177.313
+    },
+    "go2 driver": {
+     "cpu_pct_mean": 80.178,
+     "n": 49,
+     "rss_mb_mean": 269.18
+    },
+    "llm": {
+     "cpu_pct_mean": 4.659,
+     "n": 49,
+     "rss_mb_mean": 87.436
+    },
+    "object": {
+     "cpu_pct_mean": 39.776,
+     "n": 49,
+     "rss_mb_mean": 1755.195
+    },
+    "tts": {
+     "cpu_pct_mean": 0.898,
+     "n": 49,
+     "rss_mb_mean": 70.391
+    },
+    "vision": {
+     "cpu_pct_mean": 85.902,
+     "n": 49,
+     "rss_mb_mean": 396.503
+    }
+   },
+   "power_mw_mean": 10627.717,
+   "ram_mb": {
+    "max": 4155,
+    "mean": 4143.227,
+    "median": 4145,
+    "min": 4101,
+    "n": 247,
+    "p95": 4152.0,
+    "sd": 7.839
+   },
+   "rates": {
+    "/camera/camera/color/image_raw": {
+     "cv": 0.055,
+     "mean_hz": 10.094,
+     "min_ge_half_mean": true,
+     "min_window_hz": 9.5,
+     "n_windows": 6
+    },
+    "/capability/depth_clear": {
+     "cv": 0.028,
+     "mean_hz": 4.95,
+     "min_ge_half_mean": true,
+     "min_window_hz": 4.667,
+     "n_windows": 6
+    },
+    "/cmd_vel": {
+     "cv": null,
+     "mean_hz": 0.0,
+     "min_ge_half_mean": null,
+     "min_window_hz": 0.0,
+     "n_windows": 6
+    },
+    "/face_identity/debug_image": {
+     "cv": 0.024,
+     "mean_hz": 4.373,
+     "min_ge_half_mean": true,
+     "min_window_hz": 4.267,
+     "n_windows": 5
+    },
+    "/perception/object/debug_image": {
+     "cv": 0.025,
+     "mean_hz": 5.25,
+     "min_ge_half_mean": true,
+     "min_window_hz": 5.067,
+     "n_windows": 4
+    },
+    "/state/perception/face": {
+     "cv": 0.214,
+     "mean_hz": 13.978,
+     "min_ge_half_mean": true,
+     "min_window_hz": 12.433,
+     "n_windows": 6
+    }
+   },
+   "t0": 1791443570.95,
+   "t1": 1791443883.816,
+   "tj_max": 59.687
+  }
+ },
+ "stability": {
+  "dead_panes": [],
+  "no_new_oom": true,
+  "panes_alive": true,
+  "rates_min_ge_half_mean": true,
+  "stable": true,
+  "tj_below_85": true
+ },
+ "valid": true,
+ "waived": [],
+ "warmup_s": 60
+}

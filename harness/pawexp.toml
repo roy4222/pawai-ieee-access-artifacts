@@ -1,0 +1,63 @@
+# pawexp configuration. Placeholder values; copy pawexp.example.toml for field descriptions.
+[hosts]
+jetson = "<JETSON_SSH_HOST>"
+rtx8000 = "<ASR_GPU_SSH_HOST>"
+gateway = "http://<JETSON_HOST>:8080"
+gateway_token = ""
+
+[paths]
+pawai_repo = "<JETSON_PAWAI_WORKSPACE>"
+exp_dir = "<JETSON_EXP_DIR>"
+tts_cache = "<JETSON_TTS_CACHE_DIR>"
+trace_dir = "<JETSON_PAWAI_WORKSPACE>/runtime/traces"
+data_dir = "~/pawai-exp-data"
+bank = "bank/bank.json"
+bank_wav = "bank/wav"
+pawai_src = "<LOCAL_PAWAI_CHECKOUT_AT_81e5018>"
+
+[jetson]
+sudo = false
+idle_ram_mb_max = 1800
+rpl_port = "/dev/rplidar"
+
+[rtx8000]
+asr_session = "pawai-asr"
+asr_cmd = "<COMMAND_THAT_STARTS_scripts/sensevoice_server.py --port 8001>"
+
+[safety]
+inplace_api_ids = [1002, 1003, 1004, 1005, 1016, 1017, 1020]   # balance_stand, StopMove, StandUp, StandDown, Hello, Stretch, WiggleHips
+skill_request_whitelist = ["show_status", "wave_hello", "stand", "sit_along", "careful_remind", "wiggle", "stretch", "self_introduce", "greet_known_person", "fly"]
+
+[record]
+topics = ["/event/speech_intent_recognized", "/brain/text_input", "/brain/skill_request", "/brain/chat_candidate",
+          "/brain/conversation_trace", "/brain/proposal", "/brain/trace", "/brain/skill_result", "/tts",
+          "/state/tts_playing", "/webrtc_req", "/capability/depth_clear", "/cmd_vel", "/state/reactive_stop/status",
+          "/event/gesture_detected", "/event/pose_detected", "/event/object_detected", "/state/perception/face"]
+hz_topics = ["/state/perception/face", "/face_identity/debug_image", "/vision_perception/status_image",
+             "/perception/object/debug_image", "/capability/depth_clear", "/camera/camera/color/image_raw",
+             "/scan_rplidar", "/cmd_vel"]
+use_rosbag = false
+
+[play]
+gap_timeout_s = 40.0
+cooldown_s = 1.5
+
+[nodes]                            # ps-args substring -> node label (CPU/RSS attribution)
+go2_driver = "go2 driver"
+realsense2_camera = "camera"
+face_identity_node = "face"
+vision_perception_node = "vision"
+object_perception_node = "object"
+brain_node = "brain"                 # must precede interaction_executive: brain_node's path contains install/interaction_executive/
+interaction_executive = "executive"
+stt_intent_node = "asr"
+tts_node = "tts"
+conversation_graph_node = "llm"
+depth_safety_node = "depth_safety"
+foxglove_bridge = "fox"
+studio_gateway = "gateway"
+sllidar_node = "lidar"
+reactive_stop_node = "reactive"
+ollama = "ollama"
+
+# Forbidden words for the utterance bank: single source is bank/make_bank.py (FORBID/GREET/CHAT_EXTRA); check_bank.py reads it via ast.

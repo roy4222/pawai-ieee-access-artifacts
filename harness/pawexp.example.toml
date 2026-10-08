@@ -1,0 +1,73 @@
+# pawexp configuration template with field descriptions.
+# Copy to harness/pawexp.toml and replace every <...> placeholder.
+# The analysis scripts read this file only for paths.pawai_src (analyze_e2a.py);
+# all other fields are used by the on-robot harness (python3 -m pawexp ...).
+
+[hosts]
+jetson = "<JETSON_SSH_HOST>"          # Host alias in ~/.ssh/config for the Jetson Orin Nano on the robot
+rtx8000 = "<ASR_GPU_SSH_HOST>"        # Host alias of the GPU server running the remote SenseVoice ASR (key name is a role label)
+gateway = "http://<JETSON_HOST>:8080" # Base URL of the PawAI Studio gateway on the Jetson (pawai-studio/gateway/studio_gateway.py)
+gateway_token = ""                    # GATEWAY_AUTH_TOKEN if the gateway requires one; empty if not set
+
+[paths]
+pawai_repo = "<JETSON_PAWAI_WORKSPACE>"  # PawAI colcon workspace on the Jetson (PawAI scripts assume /home/jetson/elder_and_dog)
+exp_dir = "<JETSON_EXP_DIR>"             # Where harness/jetson/* is copied on the Jetson (scripts assume /home/jetson/exp)
+tts_cache = "<JETSON_TTS_CACHE_DIR>"     # TTS reply cache cleared before speech-synthesis fault scenarios; it is
+                                         # resolved relative to the tts_node working directory (see README, "Known caveats")
+trace_dir = "<JETSON_PAWAI_WORKSPACE>/runtime/traces"  # JSON Lines trace store written by the Studio gateway
+data_dir = "~/pawai-exp-data"            # Raw per-run output directory on the Jetson (tegrastats, ps, topics, traces)
+bank = "bank/bank.json"                  # Utterance bank, relative to the repository root
+bank_wav = "bank/wav"                    # One 16-kHz mono WAV per utterance id (not distributed; record your own)
+pawai_src = "<LOCAL_PAWAI_CHECKOUT_AT_81e5018>"  # Local, read-only checkout of roy4222/PawAI at 81e5018 (tag ieee-access-2026);
+                                                 # used for the intent classifier (analyze_e2a.py) and the LLM persona (bench)
+
+[jetson]
+sudo = false              # false: cloud faults are simulated through startup parameters (as in the paper); true: iptables / hosts edits
+idle_ram_mb_max = 1800    # Pre-run gate: maximum used RAM (MB) on an idle Jetson before a run may start
+rpl_port = "/dev/rplidar" # RPLIDAR serial device (e.g., /dev/ttyUSB0 without a udev rule)
+
+[rtx8000]
+asr_session = "pawai-asr" # tmux session on the GPU server that runs the ASR server (fault S6 stops and restarts it)
+asr_cmd = "<COMMAND_THAT_STARTS_scripts/sensevoice_server.py --port 8001>"  # e.g. "CUDA_VISIBLE_DEVICES=0 python sensevoice_server.py --port 8001"
+
+# [safety]  in-place Sport API ids allowed while unattended, and skills the harness may request through the console.
+# [record]  ROS 2 topics logged by topic_logger.py (topics) and sampled for rate (hz_topics).
+# [play]    per-utterance timeout and gap between utterances when playing the bank.
+# [nodes]   substring of the process arguments -> node label used for CPU/RSS attribution.
+[safety]
+inplace_api_ids = [1002, 1003, 1004, 1005, 1016, 1017, 1020]   # balance_stand, StopMove, StandUp, StandDown, Hello, Stretch, WiggleHips
+skill_request_whitelist = ["show_status", "wave_hello", "stand", "sit_along", "careful_remind", "wiggle", "stretch", "self_introduce", "greet_known_person", "fly"]
+
+[record]
+topics = ["/event/speech_intent_recognized", "/brain/text_input", "/brain/skill_request", "/brain/chat_candidate",
+          "/brain/conversation_trace", "/brain/proposal", "/brain/trace", "/brain/skill_result", "/tts",
+          "/state/tts_playing", "/webrtc_req", "/capability/depth_clear", "/cmd_vel", "/state/reactive_stop/status",
+          "/event/gesture_detected", "/event/pose_detected", "/event/object_detected", "/state/perception/face"]
+hz_topics = ["/state/perception/face", "/face_identity/debug_image", "/vision_perception/status_image",
+             "/perception/object/debug_image", "/capability/depth_clear", "/camera/camera/color/image_raw",
+             "/scan_rplidar", "/cmd_vel"]
+use_rosbag = false
+
+[play]
+gap_timeout_s = 40.0
+cooldown_s = 1.5
+
+[nodes]                            # ps-args substring -> node label (CPU/RSS attribution)
+go2_driver = "go2 driver"
+realsense2_camera = "camera"
+face_identity_node = "face"
+vision_perception_node = "vision"
+object_perception_node = "object"
+brain_node = "brain"                 # must precede interaction_executive: brain_node's path contains install/interaction_executive/
+interaction_executive = "executive"
+stt_intent_node = "asr"
+tts_node = "tts"
+conversation_graph_node = "llm"
+depth_safety_node = "depth_safety"
+foxglove_bridge = "fox"
+studio_gateway = "gateway"
+sllidar_node = "lidar"
+reactive_stop_node = "reactive"
+ollama = "ollama"
+
+# Forbidden words for the utterance bank: single source is bank/make_bank.py (FORBID/GREET/CHAT_EXTRA); check_bank.py reads it via ast.

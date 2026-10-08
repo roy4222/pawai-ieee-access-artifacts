@@ -1,0 +1,23 @@
+{
+ "gateway_play": null,
+ "input_problems": {},
+ "mode": "formal",
+ "run": "E2a-remote-r2",
+ "tiers": {
+  "remote": {
+   "cer_micro": 0.592,
+   "cer_per_sentence_mean": 0.554,
+   "failures": 43,
+   "intent_retention": 0.961,
+   "latency_s": {
+    "median": 1.706,
+    "p95": 2.743
+   },
+   "n": 77,
+   "rtf_median": 0.879,
+   "sentence_acc": 0.416
+  }
+ },
+ "valid": true,
+ "warmup_dropped": true
+}

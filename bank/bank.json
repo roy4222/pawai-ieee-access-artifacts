@@ -1,0 +1,346 @@
+{
+ "version": "r14-2026-10-07",
+ "source": "PawAI 81e5018 mode_classifier",
+ "items": [
+  {
+   "id": "c01",
+   "text": "今天天氣怎麼樣",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c02",
+   "text": "你喜歡什麼顏色",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c03",
+   "text": "講一個簡短的笑話",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c04",
+   "text": "你最喜歡吃什麼",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c05",
+   "text": "現在幾點了",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c06",
+   "text": "台北今天會下雨嗎",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c07",
+   "text": "推薦一部好看的電影",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c08",
+   "text": "你覺得貓可愛還是狗可愛",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c09",
+   "text": "明天是星期幾",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c10",
+   "text": "你平常喜歡聽什麼音樂",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c11",
+   "text": "我晚餐吃了牛肉麵",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c12",
+   "text": "你知道珍珠奶茶嗎",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c13",
+   "text": "幫我想一個週末的活動",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c14",
+   "text": "你覺得學程式難不難",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c15",
+   "text": "給我一句鼓勵的話",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c16",
+   "text": "你會不會怕黑",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c17",
+   "text": "我們來聊聊夏天",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c18",
+   "text": "你有朋友嗎",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c19",
+   "text": "今天是我朋友的生日",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c20",
+   "text": "用一句話形容秋天",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c21",
+   "text": "你喜歡下雨天還是晴天",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c22",
+   "text": "最近有什麼好玩的事",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c23",
+   "text": "我考試考得不錯",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c24",
+   "text": "你覺得機器人會做夢嗎",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "c25",
+   "text": "晚上適合喝咖啡嗎",
+   "subset": "chat",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "k01",
+   "text": "幫我揮個手",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "wave_hello"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k02",
+   "text": "跟大家揮揮手",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "wave_hello"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k03",
+   "text": "坐下來陪我一下",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "sit_along"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k04",
+   "text": "請你坐下",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "sit_along"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k05",
+   "text": "站起來",
+   "subset": "skill",
+   "mode": "chat",
+   "gold_skill": [
+    "stand"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k06",
+   "text": "可以站起來嗎",
+   "subset": "skill",
+   "mode": "chat",
+   "gold_skill": [
+    "stand"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k07",
+   "text": "扭一下屁股",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "wiggle"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k08",
+   "text": "搖搖屁股給我看",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "wiggle"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k09",
+   "text": "伸個懶腰",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "stretch"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "k10",
+   "text": "做一個伸展",
+   "subset": "skill",
+   "mode": "action_request",
+   "gold_skill": [
+    "stretch"
+   ],
+   "notes": ""
+  },
+  {
+   "id": "s01",
+   "text": "你會做什麼",
+   "subset": "status",
+   "mode": "capability_question",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "s02",
+   "text": "你有哪些功能",
+   "subset": "status",
+   "mode": "capability_question",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "s03",
+   "text": "你現在狀態還好嗎",
+   "subset": "status",
+   "mode": "chat",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "s04",
+   "text": "你是誰",
+   "subset": "status",
+   "mode": "identity",
+   "gold_skill": [],
+   "notes": ""
+  },
+  {
+   "id": "s05",
+   "text": "介紹一下你自己",
+   "subset": "status",
+   "mode": "self_intro_request",
+   "gold_skill": [],
+   "notes": ""
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use these artifacts, please cite the paper below and the PawAI software release."
+title: "PawAI IEEE Access evaluation artifacts"
+type: dataset
+authors:
+  - family-names: Lu
+    given-names: Po-Yu
+  - family-names: Tung
+    given-names: Wei-Feng
+license: BSD-2-Clause
+repository-code: "https://github.com/roy4222/pawai-ieee-access-artifacts"
+keywords:
+  - quadruped robot
+  - edge computing
+  - large language models
+  - human-robot interaction
+  - ROS 2
+references:
+  - type: software
+    title: "PawAI"
+    authors:
+      - family-names: Lu
+        given-names: Po-Yu
+    repository-code: "https://github.com/roy4222/PawAI"
+    commit: 81e50185d82caa52ccee8652ab97e0e4d7db6605
+preferred-citation:
+  type: article
+  title: "A Multimodal Quadruped Robot with Hybrid Edge–Cloud Deployment and Deterministic LLM Skill Arbitration"
+  authors:
+    - family-names: Lu
+      given-names: Po-Yu
+    - family-names: Tung
+      given-names: Wei-Feng
+  journal: "IEEE Access"
+  status: submitted
+  year: 2026

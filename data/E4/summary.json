@@ -1,0 +1,1274 @@
+{
+ "baseline": {
+  "candidate_latency_median_s": 1.581,
+  "source": "data/experiments/E3-chat-r1/summary.json",
+  "tts_synth_median_s": 6.067
+ },
+ "run_override": {
+  "S4": "E4-S4-r3",
+  "S5": "E4-S5-r3"
+ },
+ "scenarios": {
+  "S1": {
+   "candidate_latency_s": {
+    "max": 4.147,
+    "mean": 2.767,
+    "median": 2.318,
+    "min": 2.099,
+    "n": 5,
+    "p95": 3.945,
+    "sd": 0.879
+   },
+   "candidate_reason": {
+    "openrouter:eval_schema": 5
+   },
+   "fault": "llm_primary_bad",
+   "first_audio_approx_s": {
+    "max": 10.842,
+    "mean": 10.07,
+    "median": 9.932,
+    "min": 9.506,
+    "n": 5,
+    "p95": 10.761,
+    "sd": 0.561
+   },
+   "gateway_reply_s": {
+    "max": 0.019,
+    "mean": 0.015,
+    "median": 0.018,
+    "min": 0.01,
+    "n": 5,
+    "p95": 0.019,
+    "sd": 0.004
+   },
+   "input_problems": {},
+   "llm_decision": {
+    "ok": 5
+   },
+   "llm_model": {
+    "google/gemini-3-flash-preview": 5
+   },
+   "n": 5,
+   "proposal_reason": {
+    "chat_candidate_match": 5
+   },
+   "proposed_skill_nonnull": 1,
+   "reply_errors": {
+    "None": 5
+   },
+   "rows": [
+    {
+     "asr": "今天天氣怎麼樣",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c01",
+     "llm_detail": "google/gemini-3-flash-preview",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.019,
+     "skill": "chat_reply",
+     "t1": 1791441205.102,
+     "t2": 1791441209.248,
+     "t3": 1791441209.252,
+     "t5": 1791441209.312,
+     "t6": 1791441215.538,
+     "text": "今天天氣怎麼樣",
+     "tts_cache_hit": false,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "你喜歡什麼顏色",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c02",
+     "llm_detail": "google/gemini-3-flash-preview",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.018,
+     "skill": "chat_reply",
+     "t1": 1791441228.748,
+     "t2": 1791441230.881,
+     "t3": 1791441230.887,
+     "t5": 1791441230.912,
+     "t6": 1791441238.254,
+     "text": "你喜歡什麼顏色",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "講一個簡短的笑話",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c03",
+     "llm_detail": "google/gemini-3-flash-preview",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.01,
+     "skill": "chat_reply",
+     "t1": 1791441253.437,
+     "t2": 1791441255.755,
+     "t3": 1791441255.777,
+     "t5": 1791441255.801,
+     "t6": 1791441263.369,
+     "text": "講一個簡短的笑話",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "你最喜歡吃什麼",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c04",
+     "llm_detail": "google/gemini-3-flash-preview",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.012,
+     "skill": "chat_reply",
+     "t1": 1791441284.162,
+     "t2": 1791441287.299,
+     "t3": 1791441287.305,
+     "t5": 1791441287.431,
+     "t6": 1791441295.005,
+     "text": "你最喜歡吃什麼",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "現在幾點了",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c05",
+     "llm_detail": "google/gemini-3-flash-preview",
+     "llm_status": "ok",
+     "proposed_skill": "stretch",
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.019,
+     "skill": "chat_reply",
+     "t1": 1791441315.833,
+     "t2": 1791441317.932,
+     "t3": 1791441317.934,
+     "t5": 1791441318.005,
+     "t6": 1791441325.464,
+     "text": "現在幾點了",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    }
+   ],
+   "run": "E4-S1",
+   "speech_events": 5,
+   "spoken": 5,
+   "stop": {
+    "accepted": true,
+    "proposal": true,
+    "send_to_webrtc_s": 0.111,
+    "sent": true,
+    "source": "rule:safety_keyword",
+    "webrtc_1003": true
+   },
+   "tts_cache_hits": 0,
+   "tts_log": "pane_tts.log",
+   "tts_provider": {
+    "edge_tts": 4,
+    "openrouter_gemini": 1
+   },
+   "tts_synth_s": {
+    "max": 7.574,
+    "mean": 7.233,
+    "median": 7.459,
+    "min": 6.226,
+    "n": 5,
+    "p95": 7.572,
+    "sd": 0.571
+   },
+   "valid": true
+  },
+  "S2": {
+   "candidate_latency_s": {
+    "max": 2.279,
+    "mean": 1.049,
+    "median": 0.763,
+    "min": 0.648,
+    "n": 5,
+    "p95": 1.984,
+    "sd": 0.69
+   },
+   "candidate_reason": {
+    "": 5
+   },
+   "fault": "llm_both_bad",
+   "first_audio_approx_s": {
+    "max": 5.978,
+    "mean": 2.395,
+    "median": 0.906,
+    "min": 0.727,
+    "n": 5,
+    "p95": 5.497,
+    "sd": 2.335
+   },
+   "gateway_reply_s": {
+    "max": 0.099,
+    "mean": 0.044,
+    "median": 0.025,
+    "min": 0.014,
+    "n": 5,
+    "p95": 0.092,
+    "sd": 0.037
+   },
+   "input_problems": {},
+   "llm_decision": {
+    "fallback": 5
+   },
+   "llm_model": {
+    "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m": 5
+   },
+   "n": 5,
+   "proposal_reason": {
+    "chat_candidate_match": 5
+   },
+   "proposed_skill_nonnull": 0,
+   "reply_errors": {
+    "None": 5
+   },
+   "rows": [
+    {
+     "asr": "今天天氣怎麼樣",
+     "cand_reason": "",
+     "id": "c01",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.064,
+     "skill": "chat_reply",
+     "t1": 1791441392.967,
+     "t2": 1791441395.246,
+     "t3": 1791441395.249,
+     "t5": 1791441395.302,
+     "t6": 1791441398.945,
+     "text": "今天天氣怎麼樣",
+     "tts_cache_hit": false,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "你喜歡什麼顏色",
+     "cand_reason": "",
+     "id": "c02",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.099,
+     "skill": "chat_reply",
+     "t1": 1791441405.661,
+     "t2": 1791441406.412,
+     "t3": 1791441406.425,
+     "t5": 1791441406.502,
+     "t6": 1791441409.236,
+     "text": "你喜歡什麼顏色",
+     "tts_cache_hit": false,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "講一個簡短的笑話",
+     "cand_reason": "",
+     "id": "c03",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.025,
+     "skill": "chat_reply",
+     "t1": 1791441415.314,
+     "t2": 1791441416.077,
+     "t3": 1791441416.098,
+     "t5": 1791441416.105,
+     "t6": 1791441416.102,
+     "text": "講一個簡短的笑話",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "你最喜歡吃什麼",
+     "cand_reason": "",
+     "id": "c04",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.017,
+     "skill": "chat_reply",
+     "t1": 1791441422.995,
+     "t2": 1791441423.797,
+     "t3": 1791441423.799,
+     "t5": 1791441423.9,
+     "t6": 1791441423.901,
+     "text": "你最喜歡吃什麼",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "現在幾點了",
+     "cand_reason": "",
+     "id": "c05",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.014,
+     "skill": "chat_reply",
+     "t1": 1791441429.572,
+     "t2": 1791441430.22,
+     "t3": 1791441430.222,
+     "t5": 1791441430.301,
+     "t6": 1791441430.3,
+     "text": "現在幾點了",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    }
+   ],
+   "run": "E4-S2",
+   "speech_events": 5,
+   "spoken": 5,
+   "stop": {
+    "accepted": true,
+    "proposal": true,
+    "send_to_webrtc_s": 0.107,
+    "sent": true,
+    "source": "rule:safety_keyword",
+    "webrtc_1003": true
+   },
+   "tts_cache_hits": 3,
+   "tts_log": "pane_tts.log",
+   "tts_provider": {
+    "openrouter_gemini": 5
+   },
+   "tts_synth_s": {
+    "max": 3.642,
+    "mean": 3.188,
+    "median": 3.188,
+    "min": 2.734,
+    "n": 2,
+    "p95": 3.597,
+    "sd": 0.642
+   },
+   "valid": true
+  },
+  "S3": {
+   "candidate_latency_s": {
+    "max": 1.209,
+    "mean": 0.463,
+    "median": 0.293,
+    "min": 0.233,
+    "n": 5,
+    "p95": 1.034,
+    "sd": 0.419
+   },
+   "candidate_reason": {
+    "": 5
+   },
+   "fault": "cloud_timeout",
+   "first_audio_approx_s": {
+    "max": 5.402,
+    "mean": 2.13,
+    "median": 0.445,
+    "min": 0.255,
+    "n": 5,
+    "p95": 5.162,
+    "sd": 2.477
+   },
+   "gateway_reply_s": {
+    "max": 0.06,
+    "mean": 0.026,
+    "median": 0.02,
+    "min": 0.012,
+    "n": 5,
+    "p95": 0.054,
+    "sd": 0.02
+   },
+   "input_problems": {},
+   "llm_decision": {
+    "fallback": 5
+   },
+   "llm_model": {
+    "openrouter:openai/gpt-5.4-mini timeout 0.1s": 5
+   },
+   "n": 5,
+   "proposal_reason": {
+    "chat_candidate_match": 5
+   },
+   "proposed_skill_nonnull": 0,
+   "reply_errors": {
+    "None": 5
+   },
+   "rows": [
+    {
+     "asr": "今天天氣怎麼樣",
+     "cand_reason": "",
+     "id": "c01",
+     "llm_detail": "openrouter:openai/gpt-5.4-mini timeout 0.1s",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.012,
+     "skill": "chat_reply",
+     "t1": 1791441494.513,
+     "t2": 1791441495.722,
+     "t3": 1791441495.729,
+     "t5": 1791441495.8,
+     "t6": 1791441499.915,
+     "text": "今天天氣怎麼樣",
+     "tts_cache_hit": false,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "你喜歡什麼顏色",
+     "cand_reason": "",
+     "id": "c02",
+     "llm_detail": "openrouter:openai/gpt-5.4-mini timeout 0.1s",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.06,
+     "skill": "chat_reply",
+     "t1": 1791441506.188,
+     "t2": 1791441506.437,
+     "t3": 1791441506.45,
+     "t5": 1791441506.499,
+     "t6": 1791441510.39,
+     "text": "你喜歡什麼顏色",
+     "tts_cache_hit": false,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "講一個簡短的笑話",
+     "cand_reason": "",
+     "id": "c03",
+     "llm_detail": "openrouter:openai/gpt-5.4-mini timeout 0.1s",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.02,
+     "skill": "chat_reply",
+     "t1": 1791441516.76,
+     "t2": 1791441517.092,
+     "t3": 1791441517.102,
+     "t5": 1791441517.199,
+     "t6": 1791441517.205,
+     "text": "講一個簡短的笑話",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "你最喜歡吃什麼",
+     "cand_reason": "",
+     "id": "c04",
+     "llm_detail": "openrouter:openai/gpt-5.4-mini timeout 0.1s",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.028,
+     "skill": "chat_reply",
+     "t1": 1791441523.456,
+     "t2": 1791441523.748,
+     "t3": 1791441523.757,
+     "t5": 1791441523.801,
+     "t6": 1791441523.8,
+     "text": "你最喜歡吃什麼",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    },
+    {
+     "asr": "現在幾點了",
+     "cand_reason": "",
+     "id": "c05",
+     "llm_detail": "openrouter:openai/gpt-5.4-mini timeout 0.1s",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.012,
+     "skill": "chat_reply",
+     "t1": 1791441531.147,
+     "t2": 1791441531.379,
+     "t3": 1791441531.394,
+     "t5": 1791441531.406,
+     "t6": 1791441531.401,
+     "text": "現在幾點了",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "openrouter_gemini"
+    }
+   ],
+   "run": "E4-S3",
+   "speech_events": 5,
+   "spoken": 5,
+   "stop": {
+    "accepted": true,
+    "proposal": true,
+    "send_to_webrtc_s": 0.139,
+    "sent": true,
+    "source": "rule:safety_keyword",
+    "webrtc_1003": true
+   },
+   "tts_cache_hits": 3,
+   "tts_log": "pane_tts.log",
+   "tts_provider": {
+    "openrouter_gemini": 5
+   },
+   "tts_synth_s": {
+    "max": 4.115,
+    "mean": 4.003,
+    "median": 4.003,
+    "min": 3.891,
+    "n": 2,
+    "p95": 4.104,
+    "sd": 0.158
+   },
+   "valid": true
+  },
+  "S4": {
+   "candidate_latency_s": {
+    "max": 2.01,
+    "mean": 0.951,
+    "median": 0.688,
+    "min": 0.609,
+    "n": 5,
+    "p95": 1.77,
+    "sd": 0.597
+   },
+   "candidate_reason": {
+    "": 5
+   },
+   "fault": "cloud_refused",
+   "first_audio_approx_s": {
+    "max": 3.335,
+    "mean": 1.661,
+    "median": 1.212,
+    "min": 0.891,
+    "n": 5,
+    "p95": 3.054,
+    "sd": 1.024
+   },
+   "gateway_reply_s": {
+    "max": 0.069,
+    "mean": 0.025,
+    "median": 0.014,
+    "min": 0.011,
+    "n": 5,
+    "p95": 0.059,
+    "sd": 0.025
+   },
+   "input_problems": {},
+   "llm_decision": {
+    "fallback": 5
+   },
+   "llm_model": {
+    "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m": 5
+   },
+   "n": 5,
+   "proposal_reason": {
+    "chat_candidate_match": 5
+   },
+   "proposed_skill_nonnull": 0,
+   "reply_errors": {
+    "None": 5
+   },
+   "rows": [
+    {
+     "asr": "今天天氣怎麼樣",
+     "cand_reason": "",
+     "id": "c01",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.013,
+     "skill": "chat_reply",
+     "t1": 1791442420.747,
+     "t2": 1791442422.758,
+     "t3": 1791442422.768,
+     "t5": 1791442422.808,
+     "t6": 1791442424.082,
+     "text": "今天天氣怎麼樣",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "你喜歡什麼顏色",
+     "cand_reason": "",
+     "id": "c02",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.016,
+     "skill": "chat_reply",
+     "t1": 1791442431.371,
+     "t2": 1791442432.178,
+     "t3": 1791442432.184,
+     "t5": 1791442432.212,
+     "t6": 1791442433.3,
+     "text": "你喜歡什麼顏色",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "講一個簡短的笑話",
+     "cand_reason": "",
+     "id": "c03",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.069,
+     "skill": "chat_reply",
+     "t1": 1791442440.114,
+     "t2": 1791442440.756,
+     "t3": 1791442440.76,
+     "t5": 1791442440.807,
+     "t6": 1791442441.051,
+     "text": "講一個簡短的笑話",
+     "tts_cache_hit": true,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "你最喜歡吃什麼",
+     "cand_reason": "",
+     "id": "c04",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.014,
+     "skill": "chat_reply",
+     "t1": 1791442447.746,
+     "t2": 1791442448.434,
+     "t3": 1791442448.454,
+     "t5": 1791442448.511,
+     "t6": 1791442448.958,
+     "text": "你最喜歡吃什麼",
+     "tts_cache_hit": true,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "現在幾點了",
+     "cand_reason": "",
+     "id": "c05",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.011,
+     "skill": "chat_reply",
+     "t1": 1791442455.357,
+     "t2": 1791442455.966,
+     "t3": 1791442455.968,
+     "t5": 1791442456.002,
+     "t6": 1791442456.249,
+     "text": "現在幾點了",
+     "tts_cache_hit": true,
+     "tts_no_audio": [
+      "openrouter_gemini"
+     ],
+     "tts_provider": "edge_tts"
+    }
+   ],
+   "run": "E4-S4-r3",
+   "speech_events": 5,
+   "spoken": 5,
+   "stop": {
+    "accepted": true,
+    "proposal": true,
+    "send_to_webrtc_s": 0.026,
+    "sent": true,
+    "source": "rule:safety_keyword",
+    "webrtc_1003": true
+   },
+   "tts_cache_hits": 3,
+   "tts_log": "E4-S4-r3-tts-fault.log",
+   "tts_provider": {
+    "edge_tts": 5
+   },
+   "tts_synth_s": {
+    "max": 1.275,
+    "mean": 1.181,
+    "median": 1.181,
+    "min": 1.088,
+    "n": 2,
+    "p95": 1.265,
+    "sd": 0.132
+   },
+   "valid": true
+  },
+  "S5": {
+   "candidate_latency_s": {
+    "max": 1.951,
+    "mean": 0.955,
+    "median": 0.738,
+    "min": 0.624,
+    "n": 5,
+    "p95": 1.712,
+    "sd": 0.559
+   },
+   "candidate_reason": {
+    "": 5
+   },
+   "fault": "tts_cloud_refused",
+   "first_audio_approx_s": {
+    "max": 9.144,
+    "mean": 3.819,
+    "median": 1.551,
+    "min": 1.014,
+    "n": 5,
+    "p95": 8.58,
+    "sd": 3.715
+   },
+   "gateway_reply_s": {
+    "max": 0.044,
+    "mean": 0.021,
+    "median": 0.015,
+    "min": 0.013,
+    "n": 5,
+    "p95": 0.038,
+    "sd": 0.013
+   },
+   "input_problems": {},
+   "llm_decision": {
+    "fallback": 5
+   },
+   "llm_model": {
+    "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m": 5
+   },
+   "n": 5,
+   "proposal_reason": {
+    "chat_candidate_match": 5
+   },
+   "proposed_skill_nonnull": 0,
+   "reply_errors": {
+    "None": 5
+   },
+   "rows": [
+    {
+     "asr": "今天天氣怎麼樣",
+     "cand_reason": "",
+     "id": "c01",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.017,
+     "skill": "chat_reply",
+     "t1": 1791442536.207,
+     "t2": 1791442538.158,
+     "t3": 1791442538.164,
+     "t5": 1791442538.203,
+     "t6": 1791442545.352,
+     "text": "今天天氣怎麼樣",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini",
+      "edge_tts"
+     ],
+     "tts_provider": "piper"
+    },
+    {
+     "asr": "你喜歡什麼顏色",
+     "cand_reason": "",
+     "id": "c02",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.015,
+     "skill": "chat_reply",
+     "t1": 1791442552.869,
+     "t2": 1791442553.627,
+     "t3": 1791442553.629,
+     "t5": 1791442553.699,
+     "t6": 1791442559.19,
+     "text": "你喜歡什麼顏色",
+     "tts_cache_hit": false,
+     "tts_no_audio": [
+      "openrouter_gemini",
+      "edge_tts"
+     ],
+     "tts_provider": "piper"
+    },
+    {
+     "asr": "講一個簡短的笑話",
+     "cand_reason": "",
+     "id": "c03",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.015,
+     "skill": "chat_reply",
+     "t1": 1791442565.51,
+     "t2": 1791442566.248,
+     "t3": 1791442566.268,
+     "t5": 1791442566.307,
+     "t6": 1791442566.576,
+     "text": "講一個簡短的笑話",
+     "tts_cache_hit": true,
+     "tts_no_audio": [
+      "openrouter_gemini",
+      "edge_tts"
+     ],
+     "tts_provider": "piper"
+    },
+    {
+     "asr": "你最喜歡吃什麼",
+     "cand_reason": "",
+     "id": "c04",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.013,
+     "skill": "chat_reply",
+     "t1": 1791442573.171,
+     "t2": 1791442573.874,
+     "t3": 1791442573.877,
+     "t5": 1791442573.917,
+     "t6": 1791442574.184,
+     "text": "你最喜歡吃什麼",
+     "tts_cache_hit": true,
+     "tts_no_audio": [
+      "openrouter_gemini",
+      "edge_tts"
+     ],
+     "tts_provider": "piper"
+    },
+    {
+     "asr": "現在幾點了",
+     "cand_reason": "",
+     "id": "c05",
+     "llm_detail": "openrouter:bogus/none HTTP 400: {\"error\":{\"message\":\"bogus/none is not a valid m",
+     "llm_status": "fallback",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "chat_candidate_match",
+     "reply_error": null,
+     "reply_s": 0.044,
+     "skill": "chat_reply",
+     "t1": 1791442580.816,
+     "t2": 1791442581.44,
+     "t3": 1791442581.444,
+     "t5": 1791442581.505,
+     "t6": 1791442582.368,
+     "text": "現在幾點了",
+     "tts_cache_hit": true,
+     "tts_no_audio": [
+      "openrouter_gemini",
+      "edge_tts"
+     ],
+     "tts_provider": "piper"
+    }
+   ],
+   "run": "E4-S5-r3",
+   "speech_events": 5,
+   "spoken": 5,
+   "stop": {
+    "accepted": true,
+    "proposal": true,
+    "send_to_webrtc_s": 0.08,
+    "sent": true,
+    "source": "rule:safety_keyword",
+    "webrtc_1003": true
+   },
+   "tts_cache_hits": 3,
+   "tts_log": "E4-S5-r3-tts-fault.log",
+   "tts_provider": {
+    "piper": 5
+   },
+   "tts_synth_s": {
+    "max": 7.149,
+    "mean": 6.32,
+    "median": 6.32,
+    "min": 5.491,
+    "n": 2,
+    "p95": 7.066,
+    "sd": 1.172
+   },
+   "valid": true
+  },
+  "S6": {
+   "candidate_latency_s": {
+    "max": null,
+    "mean": null,
+    "median": null,
+    "min": null,
+    "n": 0,
+    "p95": null,
+    "sd": null
+   },
+   "candidate_reason": {
+    "None": 5
+   },
+   "fault": "asr_down",
+   "first_audio_approx_s": {
+    "max": null,
+    "mean": null,
+    "median": null,
+    "min": null,
+    "n": 0,
+    "p95": null,
+    "sd": null
+   },
+   "gateway_reply_s": {
+    "max": 0.593,
+    "mean": 0.479,
+    "median": 0.414,
+    "min": 0.4,
+    "n": 5,
+    "p95": 0.589,
+    "sd": 0.096
+   },
+   "input_problems": {},
+   "llm_decision": {
+    "None": 5
+   },
+   "llm_model": {
+    "None": 5
+   },
+   "n": 5,
+   "proposal_reason": {
+    "None": 5
+   },
+   "proposed_skill_nonnull": 0,
+   "reply_errors": {
+    "processing_failed": 5
+   },
+   "rows": [
+    {
+     "id": "c01",
+     "published": false,
+     "reply_error": "processing_failed",
+     "reply_s": 0.413,
+     "text": "今天天氣怎麼樣"
+    },
+    {
+     "id": "c02",
+     "published": false,
+     "reply_error": "processing_failed",
+     "reply_s": 0.574,
+     "text": "你喜歡什麼顏色"
+    },
+    {
+     "id": "c03",
+     "published": false,
+     "reply_error": "processing_failed",
+     "reply_s": 0.4,
+     "text": "講一個簡短的笑話"
+    },
+    {
+     "id": "c04",
+     "published": false,
+     "reply_error": "processing_failed",
+     "reply_s": 0.593,
+     "text": "你最喜歡吃什麼"
+    },
+    {
+     "id": "c05",
+     "published": false,
+     "reply_error": "processing_failed",
+     "reply_s": 0.414,
+     "text": "現在幾點了"
+    }
+   ],
+   "run": "E4-S6",
+   "speech_events": 0,
+   "spoken": 0,
+   "stop": {
+    "accepted": true,
+    "proposal": true,
+    "send_to_webrtc_s": 0.025,
+    "sent": true,
+    "source": "rule:safety_keyword",
+    "webrtc_1003": true
+   },
+   "tts_cache_hits": 0,
+   "tts_log": "pane_tts.log",
+   "tts_provider": {
+    "None": 5
+   },
+   "tts_synth_s": {
+    "max": null,
+    "mean": null,
+    "median": null,
+    "min": null,
+    "n": 0,
+    "p95": null,
+    "sd": null
+   },
+   "valid": true
+  },
+  "S7": {
+   "candidate_latency_s": {
+    "max": 2.758,
+    "mean": 2.097,
+    "median": 1.916,
+    "min": 1.766,
+    "n": 5,
+    "p95": 2.662,
+    "sd": 0.425
+   },
+   "candidate_reason": {
+    "openrouter:eval_schema": 5
+   },
+   "fault": "offline_mode",
+   "first_audio_approx_s": {
+    "max": 0.07,
+    "mean": 0.048,
+    "median": 0.049,
+    "min": 0.02,
+    "n": 5,
+    "p95": 0.066,
+    "sd": 0.018
+   },
+   "gateway_reply_s": {
+    "max": 0.042,
+    "mean": 0.022,
+    "median": 0.016,
+    "min": 0.013,
+    "n": 5,
+    "p95": 0.038,
+    "sd": 0.012
+   },
+   "input_problems": {},
+   "llm_decision": {
+    "ok": 5
+   },
+   "llm_model": {
+    "openai/gpt-5.4-mini": 5
+   },
+   "n": 5,
+   "proposal_reason": {
+    "offline_mode": 5
+   },
+   "proposed_skill_nonnull": 0,
+   "reply_errors": {
+    "None": 5
+   },
+   "rows": [
+    {
+     "asr": "今天天氣怎麼樣",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c01",
+     "llm_detail": "openai/gpt-5.4-mini",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "offline_mode",
+     "reply_error": null,
+     "reply_s": 0.023,
+     "skill": "say_canned",
+     "t1": 1791441828.658,
+     "t2": 1791441831.416,
+     "t3": 1791441828.666,
+     "t5": 1791441828.701,
+     "t6": 1791441828.707,
+     "text": "今天天氣怎麼樣",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "你喜歡什麼顏色",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c02",
+     "llm_detail": "openai/gpt-5.4-mini",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "offline_mode",
+     "reply_error": null,
+     "reply_s": 0.015,
+     "skill": "say_canned",
+     "t1": 1791441834.235,
+     "t2": 1791441836.151,
+     "t3": 1791441834.245,
+     "t5": 1791441834.297,
+     "t6": 1791441834.305,
+     "text": "你喜歡什麼顏色",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "講一個簡短的笑話",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c03",
+     "llm_detail": "openai/gpt-5.4-mini",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "offline_mode",
+     "reply_error": null,
+     "reply_s": 0.042,
+     "skill": "say_canned",
+     "t1": 1791441840.854,
+     "t2": 1791441842.621,
+     "t3": 1791441840.837,
+     "t5": 1791441840.897,
+     "t6": 1791441840.903,
+     "text": "講一個簡短的笑話",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "你最喜歡吃什麼",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c04",
+     "llm_detail": "openai/gpt-5.4-mini",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "offline_mode",
+     "reply_error": null,
+     "reply_s": 0.016,
+     "skill": "say_canned",
+     "t1": 1791441847.483,
+     "t2": 1791441849.761,
+     "t3": 1791441847.49,
+     "t5": 1791441847.502,
+     "t6": 1791441847.503,
+     "text": "你最喜歡吃什麼",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "edge_tts"
+    },
+    {
+     "asr": "現在幾點了",
+     "cand_reason": "openrouter:eval_schema",
+     "id": "c05",
+     "llm_detail": "openai/gpt-5.4-mini",
+     "llm_status": "ok",
+     "proposed_skill": null,
+     "published": true,
+     "reason": "offline_mode",
+     "reply_error": null,
+     "reply_s": 0.013,
+     "skill": "say_canned",
+     "t1": 1791441853.158,
+     "t2": 1791441854.924,
+     "t3": 1791441853.158,
+     "t5": 1791441853.2,
+     "t6": 1791441853.211,
+     "text": "現在幾點了",
+     "tts_cache_hit": true,
+     "tts_no_audio": [],
+     "tts_provider": "edge_tts"
+    }
+   ],
+   "run": "E4-S7",
+   "speech_events": 5,
+   "spoken": 5,
+   "stop": {
+    "accepted": true,
+    "proposal": true,
+    "send_to_webrtc_s": 0.048,
+    "sent": true,
+    "source": "rule:safety_keyword",
+    "webrtc_1003": true
+   },
+   "tts_cache_hits": 5,
+   "tts_log": "pane_tts.log",
+   "tts_provider": {
+    "edge_tts": 5
+   },
+   "tts_synth_s": {
+    "max": null,
+    "mean": null,
+    "median": null,
+    "min": null,
+    "n": 0,
+    "p95": null,
+    "sd": null
+   },
+   "valid": true
+  }
+ }
+}

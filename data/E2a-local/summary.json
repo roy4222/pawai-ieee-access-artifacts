@@ -1,0 +1,36 @@
+{
+ "gateway_play": null,
+ "input_problems": {},
+ "mode": "formal",
+ "run": "E2a-local",
+ "tiers": {
+  "sv_local": {
+   "cer_micro": 0.03,
+   "cer_per_sentence_mean": 0.031,
+   "failures": 0,
+   "intent_retention": 1.0,
+   "latency_s": {
+    "median": 0.418,
+    "p95": 0.635
+   },
+   "n": 77,
+   "rtf_median": 0.196,
+   "sentence_acc": 0.831
+  },
+  "whisper_gpu": {
+   "cer_micro": 0.137,
+   "cer_per_sentence_mean": 0.141,
+   "failures": 0,
+   "intent_retention": 0.948,
+   "latency_s": {
+    "median": 0.461,
+    "p95": 0.54
+   },
+   "n": 77,
+   "rtf_median": 0.223,
+   "sentence_acc": 0.545
+  }
+ },
+ "valid": true,
+ "warmup_dropped": true
+}

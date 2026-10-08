@@ -1,0 +1,325 @@
+{
+ "asr_cost_full_minus_console": {
+  "cpu": 1.373,
+  "gpu": 0.837,
+  "power_mw": 84.132,
+  "ram_mb": 324.134
+ },
+ "config": "A",
+ "input_problems": {},
+ "run": "E1-A-r2",
+ "segments": {
+  "console": {
+   "core_saturation_frac": 0.111,
+   "cpu": {
+    "max": 98,
+    "mean": 79.367,
+    "median": 78.667,
+    "min": 71.833,
+    "n": 595,
+    "p95": 87.5,
+    "sd": 4.261
+   },
+   "free_available_mb": null,
+   "gpu": {
+    "max": 76,
+    "mean": 20.731,
+    "median": 0,
+    "min": 0,
+    "n": 595,
+    "p95": 73.0,
+    "sd": 26.809
+   },
+   "n_samples": 595,
+   "nodes": {
+    "brain": {
+     "cpu_pct_mean": 4.8,
+     "n": 119,
+     "rss_mb_mean": 47.728
+    },
+    "camera": {
+     "cpu_pct_mean": 18.117,
+     "n": 119,
+     "rss_mb_mean": 96.529
+    },
+    "depth_safety": {
+     "cpu_pct_mean": 6.775,
+     "n": 119,
+     "rss_mb_mean": 64.808
+    },
+    "executive": {
+     "cpu_pct_mean": 3.607,
+     "n": 119,
+     "rss_mb_mean": 61.728
+    },
+    "face": {
+     "cpu_pct_mean": 224.0,
+     "n": 119,
+     "rss_mb_mean": 238.681
+    },
+    "fox": {
+     "cpu_pct_mean": 1.882,
+     "n": 119,
+     "rss_mb_mean": 42.141
+    },
+    "gateway": {
+     "cpu_pct_mean": 16.105,
+     "n": 119,
+     "rss_mb_mean": 146.613
+    },
+    "go2 driver": {
+     "cpu_pct_mean": 20.872,
+     "n": 119,
+     "rss_mb_mean": 189.463
+    },
+    "llm": {
+     "cpu_pct_mean": 5.239,
+     "n": 119,
+     "rss_mb_mean": 83.487
+    },
+    "object": {
+     "cpu_pct_mean": 29.741,
+     "n": 119,
+     "rss_mb_mean": 1684.161
+    },
+    "ollama": {
+     "cpu_pct_mean": 1.4,
+     "n": 119,
+     "rss_mb_mean": 295.469
+    },
+    "tts": {
+     "cpu_pct_mean": 1.325,
+     "n": 119,
+     "rss_mb_mean": 68.146
+    },
+    "vision": {
+     "cpu_pct_mean": 90.45,
+     "n": 119,
+     "rss_mb_mean": 349.107
+    }
+   },
+   "power_mw_mean": 9930.615,
+   "ram_mb": {
+    "max": 4408,
+    "mean": 4388.644,
+    "median": 4389,
+    "min": 4349,
+    "n": 595,
+    "p95": 4403.0,
+    "sd": 10.26
+   },
+   "rates": {
+    "/camera/camera/color/image_raw": {
+     "cv": 0.064,
+     "mean_hz": 9.65,
+     "min_ge_half_mean": true,
+     "min_window_hz": 8.533,
+     "n_windows": 12
+    },
+    "/capability/depth_clear": {
+     "cv": 0.019,
+     "mean_hz": 4.969,
+     "min_ge_half_mean": true,
+     "min_window_hz": 4.733,
+     "n_windows": 12
+    },
+    "/cmd_vel": {
+     "cv": null,
+     "mean_hz": 0.0,
+     "min_ge_half_mean": null,
+     "min_window_hz": 0.0,
+     "n_windows": 12
+    },
+    "/face_identity/debug_image": {
+     "cv": 0.069,
+     "mean_hz": 4.418,
+     "min_ge_half_mean": true,
+     "min_window_hz": 3.967,
+     "n_windows": 11
+    },
+    "/perception/object/debug_image": {
+     "cv": 0.048,
+     "mean_hz": 5.444,
+     "min_ge_half_mean": true,
+     "min_window_hz": 5.0,
+     "n_windows": 9
+    },
+    "/state/perception/face": {
+     "cv": 0.014,
+     "mean_hz": 19.417,
+     "min_ge_half_mean": true,
+     "min_window_hz": 18.833,
+     "n_windows": 12
+    }
+   },
+   "t0": 1791373858.718,
+   "t1": 1791374522.99,
+   "tj_max": 58.5
+  },
+  "full": {
+   "core_saturation_frac": 0.168,
+   "cpu": {
+    "max": 99,
+    "mean": 80.741,
+    "median": 80.167,
+    "min": 73.667,
+    "n": 606,
+    "p95": 88.792,
+    "sd": 4.15
+   },
+   "free_available_mb": null,
+   "gpu": {
+    "max": 77,
+    "mean": 21.568,
+    "median": 3.0,
+    "min": 0,
+    "n": 606,
+    "p95": 73.75,
+    "sd": 26.853
+   },
+   "n_samples": 606,
+   "nodes": {
+    "asr": {
+     "cpu_pct_mean": 9.768,
+     "n": 120,
+     "rss_mb_mean": 508.719
+    },
+    "brain": {
+     "cpu_pct_mean": 5.011,
+     "n": 121,
+     "rss_mb_mean": 46.959
+    },
+    "camera": {
+     "cpu_pct_mean": 18.345,
+     "n": 121,
+     "rss_mb_mean": 93.8
+    },
+    "depth_safety": {
+     "cpu_pct_mean": 7.049,
+     "n": 121,
+     "rss_mb_mean": 66.206
+    },
+    "executive": {
+     "cpu_pct_mean": 3.895,
+     "n": 121,
+     "rss_mb_mean": 61.088
+    },
+    "face": {
+     "cpu_pct_mean": 223.174,
+     "n": 121,
+     "rss_mb_mean": 235.69
+    },
+    "fox": {
+     "cpu_pct_mean": 2.351,
+     "n": 121,
+     "rss_mb_mean": 41.785
+    },
+    "gateway": {
+     "cpu_pct_mean": 16.736,
+     "n": 121,
+     "rss_mb_mean": 147.921
+    },
+    "go2 driver": {
+     "cpu_pct_mean": 21.275,
+     "n": 121,
+     "rss_mb_mean": 186.702
+    },
+    "llm": {
+     "cpu_pct_mean": 5.85,
+     "n": 121,
+     "rss_mb_mean": 81.727
+    },
+    "object": {
+     "cpu_pct_mean": 30.379,
+     "n": 121,
+     "rss_mb_mean": 1685.419
+    },
+    "ollama": {
+     "cpu_pct_mean": 1.475,
+     "n": 121,
+     "rss_mb_mean": 295.469
+    },
+    "tts": {
+     "cpu_pct_mean": 1.726,
+     "n": 121,
+     "rss_mb_mean": 67.589
+    },
+    "vision": {
+     "cpu_pct_mean": 89.396,
+     "n": 121,
+     "rss_mb_mean": 351.231
+    }
+   },
+   "power_mw_mean": 10014.748,
+   "ram_mb": {
+    "max": 4739,
+    "mean": 4712.777,
+    "median": 4716.0,
+    "min": 4384,
+    "n": 606,
+    "p95": 4728.0,
+    "sd": 30.844
+   },
+   "rates": {
+    "/camera/camera/color/image_raw": {
+     "cv": 0.052,
+     "mean_hz": 9.452,
+     "min_ge_half_mean": true,
+     "min_window_hz": 8.633,
+     "n_windows": 11
+    },
+    "/capability/depth_clear": {
+     "cv": 0.022,
+     "mean_hz": 4.97,
+     "min_ge_half_mean": true,
+     "min_window_hz": 4.667,
+     "n_windows": 10
+    },
+    "/cmd_vel": {
+     "cv": null,
+     "mean_hz": 0.0,
+     "min_ge_half_mean": null,
+     "min_window_hz": 0.0,
+     "n_windows": 15
+    },
+    "/face_identity/debug_image": {
+     "cv": 0.044,
+     "mean_hz": 4.267,
+     "min_ge_half_mean": true,
+     "min_window_hz": 4.0,
+     "n_windows": 8
+    },
+    "/perception/object/debug_image": {
+     "cv": 0.045,
+     "mean_hz": 5.333,
+     "min_ge_half_mean": true,
+     "min_window_hz": 5.033,
+     "n_windows": 9
+    },
+    "/state/perception/face": {
+     "cv": 0.007,
+     "mean_hz": 19.277,
+     "min_ge_half_mean": true,
+     "min_window_hz": 19.067,
+     "n_windows": 10
+    }
+   },
+   "t0": 1791373187.577,
+   "t1": 1791373858.718,
+   "tj_max": 58.656
+  }
+ },
+ "stability": {
+  "dead_panes": [],
+  "no_new_oom": true,
+  "panes_alive": true,
+  "rates_min_ge_half_mean": true,
+  "stable": true,
+  "tj_below_85": true
+ },
+ "valid": true,
+ "waived": [
+  "free.log"
+ ],
+ "warmup_s": 60
+}

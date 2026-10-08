@@ -1,0 +1,11 @@
+Copyright (c) 2026, Po-Yu Lu
+
+The data in this repository — the files under data/, the JSON files under
+bank/ (bank.json, ref_overrides.json), and cases/e5_cases.json — are licensed
+under the Creative Commons Attribution 4.0 International License (CC BY 4.0).
+
+You are free to share and adapt the data for any purpose, provided that you
+give appropriate credit, provide a link to the license, and indicate if
+changes were made.
+
+Full license text: https://creativecommons.org/licenses/by/4.0/legalcode

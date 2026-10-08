@@ -1,0 +1,55 @@
+{
+ "run": "E1-A-r3",
+ "label": "full",
+ "config": "A",
+ "kill": [],
+ "clock_offset_s": 0.05123782157897949,
+ "clock_rtt_s": 0.011722087860107422,
+ "t_start": 1791375650.7675462,
+ "t_end": 1791376984.2775345,
+ "harness_sha": "aa4b53228c6cb5b15f8db565a04ab03da93703a8",
+ "faults_active": [
+  {
+   "name": "asr_node_off",
+   "status": "active",
+   "scope": "demo",
+   "dry_run": false,
+   "applied_at": 1791376316.568322,
+   "one_way": true,
+   "sudo": false,
+   "items": null,
+   "revert": [
+    "(單向，不 revert；重新 up)"
+   ]
+  }
+ ],
+ "required": [
+  "tegrastats.log",
+  "free.log",
+  "ps.log",
+  "hz.jsonl",
+  "topics.jsonl",
+  "dmesg_before.txt",
+  "dmesg_after.txt",
+  "panes_end.txt",
+  "pane_tts.log",
+  "pane_llm.log",
+  "pane_gateway.log",
+  "trace.jsonl"
+ ],
+ "missing": [],
+ "demo_windows_at_stop": [
+  "go2",
+  "camera",
+  "face",
+  "vision",
+  "executive",
+  "tts",
+  "llm",
+  "camtf",
+  "depth_safety",
+  "fox",
+  "object",
+  "gateway"
+ ]
+}

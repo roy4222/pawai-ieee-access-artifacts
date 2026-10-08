@@ -1,0 +1,12 @@
+{
+ "run": "E1-A-r2",
+ "label": "full",
+ "config": "A",
+ "kill": [],
+ "clock_offset_s": 0.0045108795166015625,
+ "clock_rtt_s": 0.009910106658935547,
+ "t_start": 1791373187.57695,
+ "t_end": 1791374522.9895546,
+ "harness_sha": "2bc4570bb8cbd4677b2533c8c84a9ba5b3730c36",
+ "faults_active": []
+}
