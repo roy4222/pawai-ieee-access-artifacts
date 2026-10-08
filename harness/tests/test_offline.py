@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """pawexp 離線回歸測試（不連 Jetson／RTX 8000、不發 ROS）：fake Runner、fake rclpy、PATH 上的 fake sudo／iptables。
 用法：python3 harness/tests/test_offline.py [-v]
-改寫自 r14 Review 的重現腳本（tasks/raw/r14-pawexp-review.md）。
+改寫自 harness 複審時的重現腳本。
 """
 import importlib
 import importlib.util
@@ -223,7 +223,7 @@ def load_inject(type_after):
     return m, w
 
 
-CASE = {"id": "C9-T", "category": "C9", "needs_roy": False, "skill_request": {"skill": "fly"}, "wait_cooldown_s": 0}
+CASE = {"id": "C9-T", "category": "C9", "needs_operator": False, "skill_request": {"skill": "fly"}, "wait_cooldown_s": 0}
 
 
 class InjectTests(unittest.TestCase):
@@ -248,7 +248,7 @@ class InjectTests(unittest.TestCase):
         old = sys.stdin
         sys.stdin = io.StringIO("")
         try:
-            rc = m.run([dict(CASE, needs_roy=True)], str(TMP / "inj3.jsonl"), True, 0.1)
+            rc = m.run([dict(CASE, needs_operator=True)], str(TMP / "inj3.jsonl"), True, 0.1)
         finally:
             sys.stdin = old
         self.assertEqual(rc, 3)
@@ -256,8 +256,8 @@ class InjectTests(unittest.TestCase):
 
     def test_forged_intent_rejected(self):
         m, _ = load_inject(type_after=0)
-        bad = [{"id": "F1", "category": "C6", "needs_roy": False, "speech": {"text": "今天天氣很好", "intent": "come_here"}},
-               {"id": "F2", "category": "C2", "needs_roy": False, "speech": {"text": "你好棒", "intent": "stand"},
+        bad = [{"id": "F1", "category": "C6", "needs_operator": False, "speech": {"text": "今天天氣很好", "intent": "come_here"}},
+               {"id": "F2", "category": "C2", "needs_operator": False, "speech": {"text": "你好棒", "intent": "stand"},
                 "candidate": {"proposed_skill": "dance"}}]
         errs = m.validate(bad, m.WHITELIST)
         self.assertTrue(any("F1" in e for e in errs) and any("F2" in e for e in errs), errs)
@@ -852,7 +852,7 @@ class ReReviewSafetyTests(unittest.TestCase):
         sys.stdin = Input()
         try:
             with self.assertRaises(SystemExit) as cm:
-                m.run([dict(CASE, needs_roy=True, skill_request={"skill": "wave_hello"})], str(TMP / "f2.jsonl"), True, 0.1)
+                m.run([dict(CASE, needs_operator=True, skill_request={"skill": "wave_hello"})], str(TMP / "f2.jsonl"), True, 0.1)
         finally:
             sys.stdin = old
         self.assertEqual(cm.exception.code, 4)

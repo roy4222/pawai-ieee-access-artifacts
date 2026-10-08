@@ -4,7 +4,7 @@ Evaluation artifacts for the manuscript
 
 > P.-Y. Lu and W.-F. Tung, "A Multimodal Quadruped Robot with Hybrid Edge–Cloud Deployment and Deterministic LLM Skill Arbitration," *IEEE Access* [under review].
 
-The robot software evaluated in the paper lives in a separate repository, **[roy4222/PawAI](https://github.com/roy4222/PawAI)**, at commit `81e50185d82caa52ccee8652ab97e0e4d7db6605` (tag `ieee-access-2026`). This repository holds only what is needed to check and regenerate the evaluation: the measurement harness, the utterance bank and its reference transcripts, the injected arbitration cases, the analysis scripts, and the per-run summaries behind Tables VI–IX.
+The robot software evaluated in the paper lives in a separate repository, **[roy4222/PawAI](https://github.com/roy4222/PawAI)**, at commit `81e50185d82caa52ccee8652ab97e0e4d7db6605` (tag `ieee-access-2026`). This repository holds only what is needed to check and regenerate the evaluation: the measurement harness, the utterance bank and its reference transcripts, the injected arbitration cases, the analysis scripts, the per-run summaries, and the plotting scripts behind the evaluation (Section VI: Tables VII–XIII, Figs. 6–14; appendices: Tables XIV–XVI, Fig. 15).
 
 ## Layout
 
@@ -15,23 +15,46 @@ The robot software evaluated in the paper lives in a separate repository, **[roy
 | `cases/` | The injected arbitration cases of Section VI-E (`e5_cases.json`) and their generator `make_cases.py`. |
 | `analysis/` | `analyze_e1.py` … `analyze_e5.py` turn raw run directories into `summary.json`; `_common.py` holds shared parsing and statistics (standard library only; `analyze_e2a.py` additionally needs `opencc-python-reimplemented` and a PawAI checkout). `fixtures/` regenerates synthetic runs and checks the scripts against expected outputs. |
 | `data/` | One `summary.json` per run (plus `meta.json` for the resource runs), exactly as produced by `analysis/`. |
-| `figures/` | Placeholder; plotting scripts will be added when the paper figures are final. |
+| `figures/` | Plotting scripts for the data figures (Figs. 6–15) and the shared style `_style.py`; output goes to `figures/out/` (not tracked). |
 
 ## Paper ↔ files
 
-| Paper item | Run(s) in `data/` | Script | Fields |
-|---|---|---|---|
-| Table VI (steady-state resources) | `E1-A-r1`, `E1-A-r2` (full and evaluated configurations), `E1-B-r1`, `E1-B-r2` (LiDAR configuration) | `analyze_e1.py` | `segments.{full,console,lidar}.{cpu,gpu,ram_mb,…}`, `nodes.*`, `rates.*`, `stability` |
-| Excluded runs (Section VI-A) | `E1-A-r3` (robot driver idle), `E1-B-r3` (stopped after 152 s; see `meta.json`) | `analyze_e1.py` | kept for transparency, not averaged |
-| Fig. 6 (CPU over time) | `E1-A-r1`, `E1-B-r1` | — | needs the raw `tegrastats.log` (see *Raw data*) |
-| Section VII-C, person in view | `E1-person` | `analyze_e1.py` | `segments.*.nodes` |
-| Table VII, ASR rows | `E2a-local` (on-board tiers, n = 77), `E2a-remote-r2` (remote tier via the tunnel, n = 77), `E3-chat-r1` (remote tier via the gateway, n = 47) | `analyze_e2a.py`, `analyze_e3.py` | `tiers.*.{cer_micro,sentence_acc,intent_retention,latency_s}` |
-| Table VII, LLM rows | `E2b-prelim` (two cloud models and six Ollama models, n = 40 each), `E2b-7b` (Qwen2.5-7B-Instruct on the remote server) | harness `bench llm` (`harness/jetson/llm_pilot.py`) | `summary[]` |
-| Fig. 7 (latency per segment of a spoken turn) | `E3-chat-r1` | `analyze_e3.py` | `rows`, `policy_gate_src_ms`, `first_audio_approx_t6_t1`, `end_to_end_upper_t7_t1` |
-| Table VIII (failure scenarios S1–S7) | `E4` | `analyze_e4.py` | `baseline`, `scenarios` |
-| Table IX (injected arbitration cases) | `E5-agent` (43 unattended cases, 53 events), `E5-roy` (17 attended cases) | `analyze_e5.py` + `cases/e5_cases.json` | `categories`, `out_of_policy_dispatch`, `false_block`, `trace_completeness` |
+Table and figure numbers follow the submitted manuscript.
 
-Example — the LiDAR column of Table VI from the released summaries:
+| Paper item | Run(s) in `data/` | Script | Fields / notes |
+|---|---|---|---|
+| Table VI (experimental design) | — | — | design table; endpoints defined in Fig. 6 and `analysis/analyze_e3.py` |
+| Table VII (steady-state resources), Figs. 8–9 | `E1-A-r1`, `E1-A-r2` (full and evaluated configurations), `E1-B-r1`, `E1-B-r2` (LiDAR configuration) | `analyze_e1.py` | `segments.{full,console,lidar}.{cpu,gpu,ram_mb,…}`, `nodes.*`, `rates.*`, `stability`, `asr_cost_full_minus_console` |
+| Fig. 7 (CPU over time, first runs) | `E1-A-r1`, `E1-B-r1` (segment bounds from `meta.json`) | `analyze_e1.py` (parser) | needs the raw `tegrastats.log` (see *Raw data*) |
+| Excluded runs: Section VI-A protocol deviations (a)–(b), Appendix A, Fig. 15 | `E1-A-r3` (robot driver idle), `E1-B-r3` (stopped after 152 s; see `meta.json`) | `analyze_e1.py` | kept for transparency, not averaged; Fig. 15 needs the raw `tegrastats.log` |
+| Section VI-B, run with a person in view | `E1-person` | `analyze_e1.py` | `segments.*.nodes` |
+| Table VIII, Fig. 10 (speech-recognition tiers) | `E2a-local` (on-board tiers, n = 77), `E2a-remote-r2` (remote tier, n = 77); gateway row: `E3-chat-r1` (n = 47) | `analyze_e2a.py`, `analyze_e3.py` | `tiers.*.{cer_micro,intent_retention,latency_s}`; the remote tier's CER and intent retention on the 35 returned runs come from the raw per-utterance log (constants in `figures/fig_e2a_asr.py`) |
+| Table IX, Fig. 11, Table XIV (dialogue-model tiers) | `E2b-prelim` (two cloud models, six Ollama models, n = 40 each), `E2b-7b` (Qwen2.5-7B-Instruct on the remote server) | harness `bench llm` (`harness/jetson/llm_pilot.py`) | `summary[]`, `per_call[]`; subsets from `bank/bank.json` |
+| Fig. 12 (timeline of a spoken turn, from t0) | `E3-chat-r1` | `analyze_e3.py` | `rows[]` (warm-up rows dropped, n = 47) |
+| Table X, Fig. 13, Table XVI (failure scenarios S1–S7) | `E4` (baseline from `E3-chat-r1`) | `analyze_e4.py` | `baseline`, `scenarios.*` (S4, S5 from `run_override`) |
+| Tables XI–XII, Fig. 14, Table XV (injected arbitration cases) | `E5-agent` (43 unattended cases, 53 events), `E5-attended` (17 attended cases, 17 events) | `analyze_e5.py` + `cases/e5_cases.json` | `categories`, `events[]`, `false_block`, `trace_completeness`; the attended C7 out-of-policy count is re-judged from the recorded depth flag (Table XI caption), so `out_of_policy_dispatch` of `E5-attended` is not read; the total arbitration overhead of Table XII is computed from the raw topic log |
+| Table XIII (summary of findings) | all of the above | — | — |
+
+### Figures ↔ scripts
+
+Run from any directory, e.g. `python3 figures/fig_e1_resources.py` (needs matplotlib; tested with 3.10). Outputs SVG and PNG to `figures/out/`.
+
+| Figure | Script | Input |
+|---|---|---|
+| Fig. 6 (measurement endpoints) | `fig_endpoints.py` | none (schematic) |
+| Fig. 7 (CPU over time) | `fig_e1_cpu.py` | raw `tegrastats.log` of `E1-A-r1`, `E1-B-r1` under `$PAWAI_EXP_RUNS`, plus `data/*/meta.json` |
+| Fig. 8 (steady-state resources) | `fig_e1_resources.py` | `data/E1-A-r{1,2,3}`, `data/E1-B-r{1,2}` |
+| Fig. 9 (per-node CPU) | `fig_e1_nodes.py` | `data/E1-A-r{1,2}`, `data/E1-B-r{1,2}` |
+| Fig. 10 (speech-recognition tiers) | `fig_e2a_asr.py` | `data/E2a-local`, `data/E2a-remote-r2` |
+| Fig. 11 (dialogue-model tiers) | `fig_e2b_llm.py` | `data/E2b-prelim`, `data/E2b-7b`, `bank/bank.json` |
+| Fig. 12 (timeline of a spoken turn) | `fig_e3_timeline.py` | `data/E3-chat-r1` |
+| Fig. 13 (behavior under failures) | `fig_e4_failures.py` | `data/E4`, `data/E3-chat-r1` |
+| Fig. 14 (injected arbitration cases) | `fig_e5_arbitration.py` | `data/E5-agent`, `data/E5-attended` |
+| Fig. 15 (second and excluded runs) | `fig_e1_runs.py` | raw `tegrastats.log` of `E1-A-r{2,3}`, `E1-B-r{2,3}` under `$PAWAI_EXP_RUNS` |
+
+Figs. 1–5 are architecture diagrams and a photograph, not generated from data.
+
+Example — the LiDAR column of Table VII from the released summaries:
 
 ```bash
 python3 -I -c "import json,statistics as s; v=[json.load(open(f'data/E1-B-r{i}/summary.json'))['segments']['lidar']['cpu'] for i in (1,2)]; m=[x['mean'] for x in v]; print(round(s.mean(m),1), round(s.stdev(m),1), round(s.mean([x['p95'] for x in v]),1))"
@@ -41,7 +64,8 @@ python3 -I -c "import json,statistics as s; v=[json.load(open(f'data/E1-B-r{i}/s
 ## What can be reproduced where
 
 **Offline (any machine with Python ≥ 3.11):**
-- Recompute every number in Tables VI–IX from `data/*/summary.json`.
+- Recompute the numbers in Tables VII–XVI from `data/*/summary.json`, except the few values noted above that come from raw logs.
+- Redraw Figs. 6 and 8–14 with `figures/*.py` (Figs. 7 and 15 need the raw logs).
 - Check the analysis code: `python3 -I analysis/fixtures/run_fixtures.py` (regenerates synthetic runs and compares with `analysis/fixtures/*/expected*.json`).
 - Run the harness tests: `python3 harness/tests/test_offline.py`. Two tests need `paths.pawai_src` in `harness/pawexp.toml` to point at a PawAI checkout at `81e5018`; the end-to-end CER test also needs a Python with `opencc-python-reimplemented` (set `PAWEXP_OPENCC_PYTHON`).
 - Validate the bank: `python3 -I bank/check_bank.py bank/bank.json`.

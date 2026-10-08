@@ -572,7 +572,7 @@
  "n_cases": 17,
  "n_events": 17,
  "out_of_policy_dispatch": 2,
- "run": "E5-roy",
+ "run": "E5-attended",
  "trace_completeness": {
   "chat": {
    "injected": 17,

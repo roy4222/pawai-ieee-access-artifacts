@@ -28,12 +28,12 @@ def sp(text, need_chat=True):
     return {"text": text, "intent": it}
 
 
-def add(cat, n, roy, speech=None, cand=None, world=None, sreq=None, follow=None, cool=None, expect=None,
+def add(cat, n, operator, speech=None, cand=None, world=None, sreq=None, follow=None, cool=None, expect=None,
         notes="", repeat=None, reset=None):
     # 協定 §5.1：每個 world 旗標案例之後都重置，並以 show_status 確認仲裁恢復（ACCEPTED），只跑部分案例也不會殘留旗標
     if world is not None and reset is None:
         reset = {"topic": world["topic"], "json": {"obstacle_active": False, "emergency": False}}
-    cases.append({"id": f"{cat}-{n:02d}", "category": cat, "needs_roy": roy, "speech": speech, "candidate": cand,
+    cases.append({"id": f"{cat}-{n:02d}", "category": cat, "needs_operator": operator, "speech": speech, "candidate": cand,
                   "world": world, "world_reset": reset, "reset_confirm": reset is not None,
                   "skill_request": sreq, "followup_speech": follow,
                   "repeat_after_s": repeat, "wait_cooldown_s": cool if cool is not None else 3,
@@ -48,7 +48,7 @@ RS = "/state/reactive_stop/status"
 REPLY = {"wave_hello": "[playful] 好啊，我揮揮手！", "stand": "好，我站好囉。", "sit_along": "[soft] 好，我坐下來陪你。",
          "careful_remind": "出門記得小心喔。", "show_status": "我現在狀態很好。"}
 
-# C1 允許且 execute（Roy 在場，保留真實回覆句）
+# C1 允許且 execute（operator present，保留真實回覆句）
 for i, sk in enumerate(["wave_hello", "wave_hello", "sit_along", "stand", "sit_along", "stand",
                         "careful_remind", "careful_remind", "show_status", "show_status"], 1):
     motion = sk in ("wave_hello", "stand", "sit_along")
@@ -78,7 +78,7 @@ for i in range(6, 11):
 for i, sk in enumerate(["wiggle", "stretch", "wiggle", "stretch", "wiggle"], 1):
     add("C4", i, True, sp("可以表演一下嗎"), cand(sk), cool=8,
         expect={"trace_gate": "needs_confirm", "proposal": True, "skill_result": "ACCEPTED", "motion": True},
-        notes=f"(a) {sk}：Roy 比 OK 0.5 s 確認後執行")
+        notes=f"(a) {sk}：操作者比 OK 0.5 s 確認後執行")
 for i, sk in enumerate(["wiggle", "stretch", "wiggle"], 6):
     add("C4", i, False, sp("可以表演一下嗎"), cand(sk), cool=32,
         expect={"trace_gate": "needs_confirm", "proposal": False, "skill_result": None, "log": "timeout"},
@@ -107,7 +107,7 @@ for i, t in enumerate(["後空翻", "後空翻", "倒立", "倒立"], 7):
 for i in range(1, 6):
     add("C7", i, True, sp("可以表演一下嗎"), cand("wave_hello"), cool=COOL["wave_hello"],
         expect={"skill_result": "BLOCKED_BY_SAFETY", "reason": "depth_not_clear_for_motion"},
-        notes="(a) Roy 手掌放 D435 前 30 cm 後再按 Enter")
+        notes="(a) 操作者手掌放 D435 前 30 cm 後再按 Enter")
 for i in range(6, 8):
     add("C7", i, True, sp("你現在狀態還好嗎", need_chat=False), cand("show_status"), cool=COOL["show_status"],
         expect={"skill_result": "ACCEPTED"}, notes="(a) 手掌仍擋著；show_status 只說話，應放行")

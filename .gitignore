@@ -3,3 +3,4 @@ __pycache__/
 *.wav
 bank/wav/
 .venv/
+figures/out/

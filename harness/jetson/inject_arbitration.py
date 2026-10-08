@@ -66,8 +66,8 @@ def validate(cases, whitelist):
                 errs.append(f"{cid}: world topic {w.get('topic')!r} 不允許（只允許 {sorted(WORLD_TOPICS)}）")
         if c.get("speech") is None and sr is None:
             errs.append(f"{cid}: 沒有 speech 也沒有 skill_request")
-        if not isinstance(c.get("needs_roy"), bool):
-            errs.append(f"{cid}: needs_roy 必須是 bool")
+        if not isinstance(c.get("needs_operator"), bool):
+            errs.append(f"{cid}: needs_operator 必須是 bool")
     return errs
 
 

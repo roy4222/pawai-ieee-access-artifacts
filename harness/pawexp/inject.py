@@ -1,4 +1,4 @@
-"""inject（設計 §3.7）：E5 仲裁注入。前置：demo:llm 必須不存在、record 在跑；需 Roy 的案例必須 --confirm-each。"""
+"""inject（設計 §3.7）：E5 仲裁注入。前置：demo:llm 必須不存在、record 在跑；需操作者在場的案例必須 --confirm-each。"""
 import json
 import shlex
 import subprocess
@@ -35,9 +35,9 @@ def inject(r, cfg, a):
         raise Fail("inject", f"--only {a.only} 沒有選到案例")
     if a.confirm_each and not r.dry and not sys.stdin.isatty():
         raise Fail("inject", "--confirm-each 需要在終端機前由人按 Enter（stdin 不是 tty）")
-    roy = [c["id"] for c in sel if c.get("needs_roy")]
-    if roy and not a.confirm_each:
-        raise Fail("inject", f"{roy} 需要 Roy 在場（會動）：請加 --confirm-each")
+    attended = [c["id"] for c in sel if c.get("needs_operator")]
+    if attended and not a.confirm_each:
+        raise Fail("inject", f"{attended} 需要操作者在場（會動）：請加 --confirm-each")
     say(f"選到 {len(sel)} 案：{', '.join(c['id'] for c in sel)}")
     wins = r.tmux_windows("demo") if not r.dry else []
     if "llm" in wins:

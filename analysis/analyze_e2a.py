@@ -3,7 +3,7 @@
 讀 asr.jsonl（bench asr）與 play.jsonl（play --mode speech 的 gateway 回覆）。參考與假設都經 OpenCC s2twp（必要依賴，
 缺就結束碼 2）、去標點空白、全形數字轉半形、英文小寫。意圖保留率用 gateway 同一個 IntentClassifier（paths.pawai_src）。
 formal（預設）：每層第 1 遍前 3 句為暖機丟棄；acceptance：保留全部。
-參考答案：bank/ref_overrides.json 列的句子改用實際講法（Q7，Roy 10/8 聽錄音確認）。
+參考答案：bank/ref_overrides.json 列的句子改用實際講法（Q7，author verified against the recording）。
 """
 import argparse
 import importlib.util

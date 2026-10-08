@@ -120,7 +120,7 @@ def play(r, cfg, a):
         if missing:
             raise Fail("play", f"{wav_dir} 缺 WAV：{missing[:10]}")
     if any(it["subset"] == "skill" for it in items) and not a.confirm_each:
-        raise Fail("play", "技能句只能在 Roy 在場時送：請加 --confirm-each")
+        raise Fail("play", "技能句只能在操作者在場時送：請加 --confirm-each")
     if a.confirm_each and not r.dry and not sys.stdin.isatty():
         raise Fail("play", "--confirm-each 需要在終端機前由人按 Enter（stdin 不是 tty）")
     allowed = set(cfg["safety"]["inplace_api_ids"])
