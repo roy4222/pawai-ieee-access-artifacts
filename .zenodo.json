@@ -1,0 +1,15 @@
+{
+  "title": "PawAI IEEE Access evaluation artifacts",
+  "upload_type": "dataset",
+  "description": "Evaluation artifacts for P.-Y. Lu and W.-F. Tung, \"A Multimodal Quadruped Robot with Hybrid Edge–Cloud Deployment and Deterministic LLM Skill Arbitration,\" IEEE Access (under review): measurement harness, sentence-bank text and reference transcripts, injected arbitration cases, analysis and plotting scripts, and per-experiment summary files. Code is released under the BSD 2-Clause License and data under CC BY 4.0 (see LICENSE and LICENSE-DATA). The evaluated robot software is PawAI commit 81e5018 (release ieee-access-2026).",
+  "creators": [
+    {"name": "Lu, Po-Yu", "affiliation": "Fu Jen Catholic University"},
+    {"name": "Tung, Wei-Feng", "affiliation": "Fu Jen Catholic University"}
+  ],
+  "license": "cc-by-4.0",
+  "keywords": ["quadruped robot", "edge computing", "large language models", "human-robot interaction", "ROS 2"],
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.23239359", "relation": "isSupplementTo", "scheme": "doi"},
+    {"identifier": "https://github.com/roy4222/PawAI", "relation": "isSupplementTo", "scheme": "url"}
+  ]
+}
