@@ -7,7 +7,9 @@ authors:
     given-names: Po-Yu
   - family-names: Tung
     given-names: Wei-Feng
-license: BSD-2-Clause
+license:
+  - BSD-2-Clause
+  - CC-BY-4.0
 repository-code: "https://github.com/roy4222/pawai-ieee-access-artifacts"
 keywords:
   - quadruped robot

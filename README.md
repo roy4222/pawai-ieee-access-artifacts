@@ -22,7 +22,7 @@ The robot software evaluated in the paper lives in a separate repository, **[roy
 | Paper item | Run(s) in `data/` | Script | Fields |
 |---|---|---|---|
 | Table VI (steady-state resources) | `E1-A-r1`, `E1-A-r2` (full and evaluated configurations), `E1-B-r1`, `E1-B-r2` (LiDAR configuration) | `analyze_e1.py` | `segments.{full,console,lidar}.{cpu,gpu,ram_mb,…}`, `nodes.*`, `rates.*`, `stability` |
-| Excluded runs (Section VI-B) | `E1-A-r3` (robot driver idle), `E1-B-r3` (stopped after 152 s; see `meta.json`) | `analyze_e1.py` | kept for transparency, not averaged |
+| Excluded runs (Section VI-A) | `E1-A-r3` (robot driver idle), `E1-B-r3` (stopped after 152 s; see `meta.json`) | `analyze_e1.py` | kept for transparency, not averaged |
 | Fig. 6 (CPU over time) | `E1-A-r1`, `E1-B-r1` | — | needs the raw `tegrastats.log` (see *Raw data*) |
 | Section VII-C, person in view | `E1-person` | `analyze_e1.py` | `segments.*.nodes` |
 | Table VII, ASR rows | `E2a-local` (on-board tiers, n = 77), `E2a-remote-r2` (remote tier via the tunnel, n = 77), `E3-chat-r1` (remote tier via the gateway, n = 47) | `analyze_e2a.py`, `analyze_e3.py` | `tiers.*.{cer_micro,sentence_acc,intent_retention,latency_s}` |
