@@ -64,7 +64,7 @@ CLASSES = [("accepted", "Plan accepted (dispatched)", INK, None),
            ("allowlist", "Suppressed by allowlist", "white", "////"),
            ("held", "Held for confirmation", LIGHT, None),
            ("trace", "Trace only", "white", "...."),
-           ("noplan", "No skill plan (early exit or cancelled)", "white", None)]
+           ("noplan", "No requested skill plan", "white", None)]
 NAMES = {"C1": "C1 execute-mode skills", "C2": "C2 disallowed skills", "C4": "C4 confirm-mode skills",
          "C5": "C5 trace-only skills", "C6": "C6 stop / banned speech", "C7": "C7 world-state flags",
          "C9": "C9 console skill requests"}

@@ -117,7 +117,7 @@ ax_g.set_title("(c) GPU", fontsize=FS, loc="left")
 ax_r.set_ylim(0, 9100)
 bars(ax_r, ram, fmt="{:,.0f}", dy=250)
 ax_r.axhline(RAM_TOTAL_MB, color=INK, ls=(0, (3, 2)), lw=0.6)
-ax_r.text(2.45, RAM_TOTAL_MB + 120, "7,620 MB usable", ha="right", va="bottom", fontsize=FS_S)
+ax_r.text(2.45, RAM_TOTAL_MB + 120, "7,620 MB (tegrastats total)", ha="right", va="bottom", fontsize=FS_S)
 ax_r.plot([0, 0, 1, 1], [5000, 5250, 5250, 5000], color=INK, lw=0.5)
 ax_r.text(-0.4, 5350, f"+{asr_ram[0]:.0f} ± {asr_ram[1]:.0f} MB (n = 3 paired)", ha="left", va="bottom",
           fontsize=FS_S)
